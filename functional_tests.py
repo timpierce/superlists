@@ -15,7 +15,7 @@ class NewVisitorTest(unittest.TestCase):
         # She navigates over to the website homepage
         self.browser.get("http://localhost:8000")
 
-        # She sees the browsewr title says To-Do lists
+        # She sees the browser title says To-Do lists
         self.assertIn('To-Do', self.browser.title)
 
         # She is invited to enter a To-Do item
