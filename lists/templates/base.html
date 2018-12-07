@@ -1,0 +1,20 @@
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do lists</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+{% bootstrap_messages %}
+ <h1>{% block header_text %}{% endblock %}</h1>
+    <form id="id_form" method="post" action="{% block form_action %}{% endblock %}">
+        {% csrf_token %}
+        <input id="id_new_item" name="item_text" placeholder="Enter a to-do item"/>
+    {% block table %}
+    {% endblock %}
+    </form>
+</body>
+</html>
