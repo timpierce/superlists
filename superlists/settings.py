@@ -20,7 +20,7 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     ALLOWED_HOSTS = [os.environ['SITENAME']]
-    STATIC_URL = os.path.joim(os.environ['SITENAME'], 'static/')
+    STATIC_URL = os.path.join(os.environ['SITENAME'], 'static/')
     STATIC_ROOT = os.environ['STATIC_ROOT']
 
 else:
