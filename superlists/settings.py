@@ -20,6 +20,9 @@ if 'DJANGO_DEBUG_FALSE' in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     ALLOWED_HOSTS = [os.environ['SITENAME']]
+    STATIC_URL = os.path.joim(os.environ['SITENAME'], 'static/')
+    STATIC_ROOT = os.environ['STATIC_ROOT']
+
 else:
     # Quick-start development settings - unsuitable for production
     # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -31,6 +34,11 @@ else:
     DEBUG = True
 
     ALLOWED_HOSTS = []
+    # Static files (CSS, JavaScript, Images)
+    # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Application definition
@@ -119,10 +127,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
